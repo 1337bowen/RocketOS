@@ -1,0 +1,44 @@
+Software Structure:
+===================
+* Goal: Keep simulation code and flight code seperate.
+IE Make the simulation code be a drop in replacement for actual hardware, while making the flight code side completely platform independant.
+
+src
+    math
+        quaternions
+        orientation
+    flight
+        utility
+        main.cpp
+    sim
+        dynamics
+        sensors
+
+sim math
+rigidbody 
+
+flight math
+
+** dynamics is regular rigidbody physics equations that are sampled and have noise added to mimmic sensor hardware
+
+Flow:
+=====
+dynamics (forces) -> sensor (filter) -> orientation / position -> gnc -> log
+
+
+Flight States:
+=============
+* Each mode has a different neopixel color
+* Datalogging runs in the background after pad ready is over so states do not interfere
+Pre-Flight
+    Pad Test - Proper orientation, low sensor error, servo movement, data log, pyro continuity
+
+Ascent
+    Pad Ready - Data log prep, console log all important info, calibrate and zero sensors
+    Active Ascent - Fire motor pyro, orientation, position, gnc loop running, checking for apogee
+    Passive Ascent - Motor no longer firing, gnc loop not running
+
+Descent
+    Free Descent
+    Chute Descent
+    Landed
