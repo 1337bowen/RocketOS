@@ -5,7 +5,6 @@
 #include <stdint.h> // specific types and macros
 #include <stdio.h>
 #include <chrono> // time
-#include <unistd.h>
 
 enum FlightState 
 {
@@ -21,11 +20,13 @@ enum FlightState
 class Simulation
 {
 private:
-
+    double length;
+    double time;
+    double dt;
+    long int iterations;
 
 public:
-
-
+    
 
 };
 

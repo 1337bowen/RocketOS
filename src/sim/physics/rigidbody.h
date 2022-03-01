@@ -5,10 +5,6 @@
 class RigidBody 
 {
 private:
-    double length;
-    double time;
-    double dt;
-    long int iterations;
 
 public:
     RigidBody (double length, double time, double dt, long int iterations) { }; // basic declaration
