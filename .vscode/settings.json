@@ -4,6 +4,7 @@
         "utility": "cpp",
         "algorithm": "cpp",
         "chrono": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "random": "cpp"
     }
 }
